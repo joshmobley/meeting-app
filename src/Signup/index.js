@@ -36,17 +36,24 @@ const ConnectSignup = ({ user, updateUser}) => {
     }
 
     return (
-        <form onSubmit={ e => handleFormSubmit(e) }>
-            <label for="name">Name</label>
-            <input type="text" id="name" value={ name } onChange={ e => updateName(e.target.value) } />
-            <label for="email">Email</label>
-            <input type="email" id="email" value={ email } onChange={ e => updateEmail(e.target.value) } />
-            <label for="password">Password</label>
-            <input type="password" id="password" value={ password } onChange={ e => updatePassword(e.target.value) } />
-            <label for="password-confirm">Confirm Password</label>
-            <input type="password" id="password-confirm" value={ passConfirm } onChange={ e => updatePassConfirm(e.target.value) } />
-            <button type="submit">Sign Up</button>
-        </form>
+        <div class="auth-bg">
+            <h1>Clearer Meetings</h1>
+            <div class="auth-wrapper"> 
+                <h2>Sign Up</h2>
+                <form onSubmit={ e => handleFormSubmit(e) }>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" value={ name } onChange={ e => updateName(e.target.value) } />
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value={ email } onChange={ e => updateEmail(e.target.value) } />
+                    <label for="password">Password</label>
+                    <input type="password" id="password" value={ password } onChange={ e => updatePassword(e.target.value) } />
+                    <label for="password-confirm">Confirm Password</label>
+                    <input type="password" id="password-confirm" value={ passConfirm } onChange={ e => updatePassConfirm(e.target.value) } />
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        
     )
 }
 

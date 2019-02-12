@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import { updateUser } from '../actions';
 import { connect } from 'react-redux';
 import axios from 'axios';
@@ -25,13 +24,24 @@ const ConnectLogin = ({ user, updateUser }) => {
     }
 
     return (
-        <form onSubmit={ e => handleFormSubmit(e) }>
-            <label for="email">Email</label>
-            <input type="email" id="email" value={ email } onChange={ e => updateEmail(e.target.value) } />
-            <label for="password">Password</label>
-            <input type="password" id="password" value={ password } onChange={ e => updatePassword(e.target.value)} />
-            <button type="submit">Submit</button>
-        </form>
+        <div className="auth-bg">
+            <h1>Clearer Meetings</h1>
+            <div class="auth-wrapper">
+                <h2>Sign In</h2>
+                <form onSubmit={ e => handleFormSubmit(e) }>
+                    <div>
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" value={ email } onChange={ e => updateEmail(e.target.value) } />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" value={ password } onChange={ e => updatePassword(e.target.value)} />
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            
+        </div>
     )
 }
 
