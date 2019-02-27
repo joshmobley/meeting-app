@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { updateUser } from '../actions';
 import { connect } from 'react-redux';
 import axios from 'axios';
@@ -25,7 +26,6 @@ const ConnectLogin = ({ user, updateUser }) => {
 
     return (
         <div className="auth-bg">
-            <h1>Clearer Meetings</h1>
             <div class="auth-wrapper">
                 <h2>Sign In</h2>
                 <form onSubmit={ e => handleFormSubmit(e) }>
@@ -39,6 +39,7 @@ const ConnectLogin = ({ user, updateUser }) => {
                     </div>
                     <button type="submit">Submit</button>
                 </form>
+                <Link to="/signup">Create an account</Link>
             </div>
             
         </div>

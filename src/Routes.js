@@ -7,6 +7,7 @@ import Home from './Home';
 import Login from './Login';
 import Signup from './Signup';
 import MeetingForm from './MeetingForm';
+import MeetingDetail from './MeetingDetail';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import Axios from 'axios';
@@ -36,6 +37,7 @@ const ConnectRoutes = ({ user, updateUser }) => {
                 <Switch>
                     <PrivateRoute path="/" user={ user } exact component={ Home } />
                     <PrivateRoute path="/meetings/new" user={ user } exact component={ MeetingForm } />
+                    <PrivateRoute path="/meetings/:id" user={ user } component={ MeetingDetail } />
                     <PublicRoute path="/login" user={ user } component={ Login } />
                     <PublicRoute path="/signup" user={ user } component={ Signup } />
                 </Switch>

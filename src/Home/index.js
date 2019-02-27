@@ -8,20 +8,13 @@ import MeetingList from '../MeetingList';
 const ConnectHome = ({ meetings, user, updateUser, updateMeetings }) => {
 
   useEffect( () => {
-      axios.get('//localhost:3000/meeting', { withCredentials: true }).then( res =>
-        updateMeetings(res.body)
+      axios.get('//localhost:3000/meeting', { withCredentials: true }).then( res => 
+        updateMeetings(res.data)
       )
-  })
-
-  const logout = () => {
-    axios.get('//localhost:3000/auth/logout', { withCredentials: true }).then( res => 
-        updateUser({})
-    ).catch( err => console.log(err));
-  }
+  }, [])
 
   return (
       <div>
-        <button onClick={ e => logout(e) }>Log Out</button>
         <h2>Meetings</h2>
         { meetings && <MeetingList meetings={meetings} /> }
         <Link to="/meetings/new"><button>New Meeting</button></Link>
@@ -31,15 +24,13 @@ const ConnectHome = ({ meetings, user, updateUser, updateMeetings }) => {
 
 const mapStateToProps = state => {
     return { 
-        meetings: state.meetings,
-        user: state.user 
+        meetings: state.meetings
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateMeetings: meetings => dispatch(updateMeetings(meetings)),
-        updateUser: user => dispatch(updateUser(user))
+        updateMeetings: meetings => dispatch(updateMeetings(meetings))
     }
 }
 

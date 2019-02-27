@@ -1,0 +1,16 @@
+.header {
+    align-items: center;
+    background: rgb(31, 7, 87);
+    color: #fff;
+    display: flex;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+
+    .button {
+        background: rgba(255, 255, 255, .1);
+        border: none;
+        color: #fff;
+        margin: 0 0 0 auto;
+        padding: .5rem 1rem;
+    }
+}

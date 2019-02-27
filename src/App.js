@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import store from './store';
 import './App.scss';
 
+import Header from './Header';
+
 import Routes from './Routes';
 
 
@@ -12,6 +14,7 @@ const App = () => {
 
 return (
   <Provider store={ store }>
+    <Header />
     <Routes />
   </Provider>
 )

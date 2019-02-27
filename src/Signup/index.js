@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { updateUser } from '../actions';
 
@@ -37,7 +38,6 @@ const ConnectSignup = ({ user, updateUser}) => {
 
     return (
         <div class="auth-bg">
-            <h1>Clearer Meetings</h1>
             <div class="auth-wrapper"> 
                 <h2>Sign Up</h2>
                 <form onSubmit={ e => handleFormSubmit(e) }>
@@ -51,6 +51,7 @@ const ConnectSignup = ({ user, updateUser}) => {
                     <input type="password" id="password-confirm" value={ passConfirm } onChange={ e => updatePassConfirm(e.target.value) } />
                     <button type="submit">Sign Up</button>
                 </form>
+                <Link to="/login">Login Instead</Link>
             </div>
         </div>
         
